@@ -1,8 +1,4 @@
 (function ($, window) {
-    console.log("Main.js ran");
-
-    // http://www.omdbapi.com/?s=star+wars&apikey=6505fd56
-
     var apiKey = "6505fd56";
     var searchResults;
     var server = "https://instructor-code-challenge.herokuapp.com/favorites";
@@ -25,6 +21,7 @@
     }
 
     function createTable(movieJSON) {
+        $("#movieList").html("");
         $("#movieList").append("<tr><th>Title</th><th>Favorite</th></tr>");
 
         for (x in movieJSON) {
@@ -36,16 +33,15 @@
     }
 
     function handleFavoritesChange(element) {
-        console.log("pre post");
         $.post(server, { title: this.name })
         .done(function() {
-            alert("second success");
+            console.log("success");
         })
         .fail(function(response) {
-            alert("error:" + response.responseText);
+            console.log("error:" + response.statusText);
         })
         .always(function() {
-            alert("finished");
+            console.log("finished");
          });
     }
 

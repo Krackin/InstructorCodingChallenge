@@ -5,7 +5,7 @@
 
     var apiKey = "6505fd56";
     var searchResults;
-    var server = "localhost:3000/favorites";
+    var server = "https://instructor-code-challenge.herokuapp.com/favorites";
 
     $(document).ready(function() {
         $("#searchButton").click(function(event){

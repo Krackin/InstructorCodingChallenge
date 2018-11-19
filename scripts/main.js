@@ -14,7 +14,7 @@
 
     function searchMovies(searchString) {
         $.ajaxSetup({async: false});
-        $.get("http://www.omdbapi.com", { s:searchString, apikey:apiKey }, function(data, status){
+        $.get("https://www.omdbapi.com", { s:searchString, apikey:apiKey }, function(data, status){
             searchResults = data.Search;
             console.log(searchResults);
         }, "json");        
